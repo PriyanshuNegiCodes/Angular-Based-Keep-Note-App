@@ -27,20 +27,21 @@ New Note
         </mat-form-field>
         <mat-form-field>
             <mat-label>Category</mat-label>
-            <input matInput matInput name="category" [(ngModel)]="newNote.category"  #category="ngModel">   
+            <input matInput name="category" [(ngModel)]="newNote.category"  #category="ngModel">   
         </mat-form-field>
 
-        <mat-radio-group>
-            <mat-label class="cateogry" name="category" [(ngModel)]="newNote.priority">Overall Rating</mat-label>
+        <mat-radio-group name="priority" [(ngModel)]="newNote.priority">
+            <mat-label > <h3>Priority </h3> </mat-label>
             <div>
             <mat-radio-button value="Low">Low</mat-radio-button>
             <mat-radio-button value="Medium">Medium</mat-radio-button>
-            <mat-radio-button value="high">high</mat-radio-button>
+            <mat-radio-button value="High">High</mat-radio-button>
             <mat-radio-button value="Critical">Critical</mat-radio-button>
             </div>
         </mat-radio-group>
+
         <button [disabled]="formdata.invalid">
-            <mat-icon type="button" (click)="openSnackBar('Feedback Submitted SuccessFully', 'Success')">save</mat-icon>        
+            <mat-icon type="button" (click)="addNote()"  (click)="openSnackBar('Feedback Submitted SuccessFully', 'Success')">save</mat-icon>        
         </button>
     </form>
 </div>   
@@ -49,3 +50,6 @@ New Note
     
 </mat-accordion>
 
+
+
+           

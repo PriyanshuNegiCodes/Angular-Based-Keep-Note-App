@@ -19,8 +19,9 @@ export class AddComponent {
   };
   constructor (private _snackBar: MatSnackBar, private myservices:NotesService){
   }
-  addNote(data:Note){
-    this.myservices.addNotes(data).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
+  addNote(){
+    alert(this.newNote.priority)
+    //this.myservices.addNotes(this.newNote).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
   }
 
   openSnackBar(message: string, action: string) {
