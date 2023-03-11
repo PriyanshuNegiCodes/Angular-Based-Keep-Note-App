@@ -13,13 +13,14 @@ export class SearchComponent {
   eventObj=new EventEmitter();
 
   search(){
-     this.eventObj.emit(this.searchNote);
+
+      this.eventObj.emit(this.searchNote);
      
-     if (this.searchButtonText === 'Search') {
-      this.searchButtonText = 'Reset';
-    } else {
-      this.searchButtonText = 'Search';
-    }
+    //  if (this.searchButtonText === 'Search') {
+    //   this.searchButtonText = 'Reset';
+    // } else {
+    //   this.searchButtonText = 'Search';
+    // }
     this.searchNote="";
   }
 

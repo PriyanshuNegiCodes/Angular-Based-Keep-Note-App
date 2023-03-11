@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+searchText=""
+searchedItem(rcvd:any){
+this.searchText=rcvd;
+}
 }

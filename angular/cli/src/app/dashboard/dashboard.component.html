@@ -1,6 +1,6 @@
-<app-search></app-search>
+<app-search (eventObj)="searchedItem($event)"></app-search>
 
 <div class="addNote">
     <app-add></app-add>
 </div>
-<app-note></app-note>
+<app-note [search]="searchText"></app-note>
