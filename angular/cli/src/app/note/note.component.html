@@ -1,4 +1,4 @@
-<mat-card *ngFor="let data of NoteData">
+<mat-card class="data" *ngFor="let data of NoteData">
     <mat-card-header>
       <mat-card-title>{{data.title}}</mat-card-title>
       <mat-card-subtitle>{{data.reminderDate}} <mat-icon>{{data.priority}}</mat-icon> </mat-card-subtitle>
@@ -10,3 +10,8 @@
       {{data.category}}
     </mat-card-actions>
 </mat-card>
+<div class="example-button-container">
+    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
