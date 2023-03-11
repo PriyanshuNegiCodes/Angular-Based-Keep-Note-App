@@ -13,6 +13,6 @@ export class NoteComponent {
   }
 
   ngOnInit(){
-    this.NoteData=this.myservice.getNotes().subscribe(data=>alert("The data was fetched "))
+   this.myservice.getNotes().subscribe(data=>this.NoteData=data)
   }
 }
