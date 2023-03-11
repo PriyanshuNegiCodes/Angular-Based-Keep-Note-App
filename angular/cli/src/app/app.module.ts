@@ -24,6 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSnackBarModule,
     HttpClientModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSelectModule
 
   ],
   providers: [],

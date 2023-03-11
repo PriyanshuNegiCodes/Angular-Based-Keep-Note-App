@@ -25,10 +25,16 @@ New Note
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field>
+
+        <mat-form-field appearance="fill">
             <mat-label>Category</mat-label>
-            <input matInput name="category" [(ngModel)]="newNote.category"  #category="ngModel" required>   
-        </mat-form-field>
+            <mat-select name="category" [(ngModel)]="newNote.category" required>
+              <mat-option value="Review">Review</mat-option>
+              <mat-option value="Office">Office</mat-option>
+            </mat-select>
+            <mat-error *ngIf="!newNote.category">Category is required</mat-error>
+          </mat-form-field>
+          
 
         <mat-radio-group name="priority" [(ngModel)]="newNote.priority" required>
             <mat-label > <h3>Priority </h3> </mat-label>
@@ -40,8 +46,8 @@ New Note
             </div>
         </mat-radio-group>
 
-        <button type="button" [disabled]="formdata.invalid">
-            <mat-icon  (click)="addNote()"  (click)="openSnackBar('Feedback Submitted SuccessFully', 'Success')">save</mat-icon>        
+        <button type="submit" [disabled]="formdata.invalid">
+            <mat-icon  (click)="addNote()" >save</mat-icon>        
         </button>
 
     </form>

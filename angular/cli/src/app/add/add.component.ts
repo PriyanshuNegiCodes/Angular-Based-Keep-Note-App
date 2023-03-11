@@ -20,8 +20,12 @@ export class AddComponent {
   constructor (private _snackBar: MatSnackBar, private myservices:NotesService){
   }
   addNote(){
-    alert(this.newNote.priority)
-    //this.myservices.addNotes(this.newNote).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
+    if(this.newNote.priority!=="" && this.newNote.title!==""&& this.newNote.reminderDate!==""&&this.newNote.category!==""){
+      this.myservices.addNotes(this.newNote).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
+      this.openSnackBar('Feedback Submitted SuccessFully', 'Success')
+    } else{
+      this.openSnackBar('Failed to add Note', "Ok")
+    }
   }
 
   openSnackBar(message: string, action: string) {

@@ -55,6 +55,18 @@
       "category": "Office",
       "priority": "Medium",
       "id": 7
+    },
+    {
+      "category": "Review",
+      "id": 8
+    },
+    {
+      "title": "Sprint 2 Qns",
+      "content": "All the required modules to work with Angular forms and material components should be imported in the application root module.​\nValidations must be implemented for the form controls.​\nNewly added note should be available after successful form submission in the note list as seen in the expected output image.​\nFollowing mat-icons should be used for displaying the priority levels while adding the note in a card.",
+      "reminderDate": "2023-03-10T18:30:00.000Z",
+      "category": "Office",
+      "priority": "High",
+      "id": 9
     }
   ]
 }
