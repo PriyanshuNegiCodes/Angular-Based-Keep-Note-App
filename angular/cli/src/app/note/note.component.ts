@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 
@@ -8,19 +8,31 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent {
-  @Input()
-  search:any
-  NoteData: Note|any;
 
+  searchdata:any
+  NoteData: Note|any;
+  searchNote="";
+  
+  searchButtonText="Search";
   constructor(private myservice:NotesService){}
 
-  ngOnInit(){
-    if(this.search===""){
-      this.myservice.getNotes().subscribe(data => this.NoteData = data);
+  search(){
+    if(this.searchNote===""){
+      this.ngOnInit();
     }else{
-      this.myservice.getNotes().subscribe(data => this.NoteData = data.filter(sort=> sort.title===this.search));
+      this.sorted(this.searchNote)
     }
   }
+  ngOnInit(){
+    this.myservice.getNotes().subscribe(data => this.NoteData = data);
+  }
+
+  sorted(text:any){
+    this.myservice.getNotes().subscribe(data => this.NoteData = data.filter(sort=>sort.title===text));
+  }
+  
+ 
+
 
   dateChange(input: any) {
     let date = new Date(input);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,8 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  @Output()
+  searchEmit=new EventEmitter();
 searchText=""
 searchedItem(rcvd:any){
-this.searchText=rcvd;
+this.searchEmit.emit(rcvd);
 }
 }
