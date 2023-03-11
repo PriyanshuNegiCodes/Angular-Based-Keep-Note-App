@@ -46,5 +46,9 @@ mat-label {
     margin-left: 8px;
   }
   .height{
-    margin-left: 7px;
+    margin-left: 10px;
+  }
+
+  mat-radio-group{
+    padding-left: 0px;
   }

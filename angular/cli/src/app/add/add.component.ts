@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Note } from 'src/assets/note';
+import { NotesService } from '../services/notes.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -16,8 +17,12 @@ export class AddComponent {
     category: "",
     priority: ""
   };
-  constructor (private _snackBar: MatSnackBar){
+  constructor (private _snackBar: MatSnackBar, private myservices:NotesService){
   }
+  addNote(data:Note){
+    this.myservices.addNotes(data).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
+  }
+
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
     this.newNote={};

@@ -12,4 +12,7 @@ export class NotesService {
   getNotes():Observable<Note[]>{
     return this.http.get<Note[]>('http://localhost:3000/notes')
   }
+  addNotes(dataIn:Note){
+    return this.http.post<Note>('http://localhost:3000/notes', dataIn);
+  }
 }
