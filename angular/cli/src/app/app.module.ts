@@ -20,7 +20,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatNativeDateModule} from '@angular/material/core'
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDatepickerModule,
     MatDialogModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSnackBarModule
 
   ],
   providers: [],

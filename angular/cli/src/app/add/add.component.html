@@ -1,5 +1,5 @@
 <div class="addNote">
-    <form>
+    <form #formdata="ngForm">
         <mat-form-field appearance="fill" class="height" >
             <mat-label>Note Title</mat-label>
             <input matInput required name="title" [(ngModel)]="newNote.title" #noteTitle="ngModel" >
@@ -31,7 +31,8 @@
             <mat-radio-button value="Critical">Critical</mat-radio-button>
             </div>
         </mat-radio-group>
-    
-        
+        <button [disabled]="formdata.invalid">
+            <mat-icon type="button" (click)="openSnackBar('Feedback Submitted SuccessFully', 'Success')">save</mat-icon>        
+        </button>
     </form>
 </div>
