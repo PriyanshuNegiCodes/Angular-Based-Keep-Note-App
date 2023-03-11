@@ -8,4 +8,11 @@ import { NotesService } from '../services/notes.service';
 })
 export class NoteComponent {
   NoteData: Note|any;
+
+  constructor(private myservice:NotesService){
+  }
+
+  ngOnInit(){
+    this.NoteData=this.myservice.getNotes().subscribe(data=>alert("The data was fetched "))
+  }
 }
