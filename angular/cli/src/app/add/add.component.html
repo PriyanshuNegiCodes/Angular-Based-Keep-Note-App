@@ -12,11 +12,26 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" name="datepicker" [(ngModel)]="newNote.reminderDate">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <input matInput matInput name="category" [(ngModel)]="newNote.category"  #category="ngModel">   
+        </mat-form-field>
+
+        <mat-radio-group>
+            <mat-label class="cateogry" name="category" [(ngModel)]="newNote.priority">Overall Rating</mat-label>
+            <div>
+            <mat-radio-button value="Low">Low</mat-radio-button>
+            <mat-radio-button value="Medium">Medium</mat-radio-button>
+            <mat-radio-button value="high">high</mat-radio-button>
+            <mat-radio-button value="Critical">Critical</mat-radio-button>
+            </div>
+        </mat-radio-group>
+    
         
     </form>
 </div>

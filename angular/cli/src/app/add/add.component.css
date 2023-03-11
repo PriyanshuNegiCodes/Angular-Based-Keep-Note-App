@@ -5,7 +5,7 @@
 }
 
 mat-form-field{
-    width: auto;
+    width: 60%;
     margin-left: 20px;
     margin-top: 20px;
     margin-right: 20px;
@@ -19,5 +19,17 @@ p{
 }
 mat-label {
     font-size: 12px;
+  }
+
+  div{
+    width: auto;
+    margin-left: 17px;
+    margin-right: 20px;
+  }
+  .cateogry{
+    margin-left: 25px;
+    font-size: 15px;
+    font-weight:400;
+ 
   }
 

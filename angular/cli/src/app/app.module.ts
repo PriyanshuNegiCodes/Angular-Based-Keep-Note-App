@@ -19,6 +19,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatNativeDateModule} from '@angular/material/core'
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import {MatNativeDateModule} from '@angular/material/core'
     DashboardComponent,
     SearchComponent,
     AddComponent,
-    NoteComponent
+    NoteComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {MatNativeDateModule} from '@angular/material/core'
     MatExpansionModule,
     MatDatepickerModule,
     MatDialogModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatRadioModule
 
   ],
   providers: [],
