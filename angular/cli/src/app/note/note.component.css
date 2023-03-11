@@ -17,6 +17,12 @@
     margin-bottom: 10px;
 }
 
+mat-card-title{
+  display: flex;
+  justify-content: start;
+}
+
+
 @media screen and (max-width: 768px),  screen and (max-width: 1024px)   {
     div {
       display: flex;
