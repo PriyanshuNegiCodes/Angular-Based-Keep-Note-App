@@ -1,1 +1,12 @@
-<p>note works!</p>
+<mat-card *ngFor="let data of NoteData">
+    <mat-card-header>
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.reminderDate}} <mat-icon>{{data.priority}}</mat-icon> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+       <p>{{data.content}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      {{data.category}}
+    </mat-card-actions>
+</mat-card>
