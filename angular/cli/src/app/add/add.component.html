@@ -1,3 +1,11 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+New Note
+</mat-panel-title>
+</mat-expansion-panel-header>
 <div class="addNote">
     <form #formdata="ngForm">
         <mat-form-field appearance="fill" class="height" >
@@ -35,4 +43,9 @@
             <mat-icon type="button" (click)="openSnackBar('Feedback Submitted SuccessFully', 'Success')">save</mat-icon>        
         </button>
     </form>
-</div>
+</div>   
+</mat-expansion-panel>
+
+    
+</mat-accordion>
+

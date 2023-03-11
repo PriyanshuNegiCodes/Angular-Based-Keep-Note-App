@@ -7,6 +7,7 @@ import { Note } from 'src/assets/note';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
+  panelOpenState = false;
   newNote: Note|any = {
     // id: null,
     title: "",

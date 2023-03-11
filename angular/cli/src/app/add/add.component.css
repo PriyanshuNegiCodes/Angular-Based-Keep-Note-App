@@ -1,7 +1,7 @@
 .addNote{
     width: auto;
     height: auto;
-    border: 1px solid gray;
+
 }
 
 mat-form-field{
@@ -40,4 +40,8 @@ mat-label {
     width: 35px;
     border-radius: 50%;
     margin-bottom: 20px;
+  }
+
+  .mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
   }
