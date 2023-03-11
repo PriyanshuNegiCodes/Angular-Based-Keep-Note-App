@@ -1,0 +1,13 @@
+#search {
+ 
+    display: flex;
+    justify-content: center;
+ 
+  }
+  #searchInput{
+    width: 300px;
+  }
+  button.mat-butt{
+    border: none;
+    outline: none;
+  }
