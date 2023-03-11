@@ -6,7 +6,7 @@ import { Note } from 'src/assets/note';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  emptyNote: Note = {
+  newNote: Note = {
     // id: null,
     title: "",
     content: "",

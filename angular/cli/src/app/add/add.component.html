@@ -2,7 +2,19 @@
     <form>
         <mat-form-field appearance="fill" class="height" >
             <mat-label>Note Title</mat-label>
-            <input matInput required>
-        </mat-form-field>      
+            <input matInput required name="title" [(ngModel)]="newNote.title" #noteTitle="ngModel" >
+            <p *ngIf="noteTitle.touched && noteTitle.pristine">Note title is required</p>
+        </mat-form-field>    
+        <!-- <mat-form-field>
+            <mat-label>Note Content</mat-label>
+            <textarea name="noteContent" [(ngModel)]="newNote.content" required minlength="100" #noteContent="ngModel"></textarea>
+            <p *ngIf="noteContent.touched && noteContent.pristine">Note content is required</p>
+        </mat-form-field> -->
+        <mat-form-field >
+            <mat-label>Note Content</mat-label>
+            <textarea matInput name="comment" [(ngModel)]="newNote.content" #content="ngModel"></textarea>
+            <p *ngIf="content.touched && content.pristine">Note content is required</p>
+        </mat-form-field>
+
     </form>
 </div>
