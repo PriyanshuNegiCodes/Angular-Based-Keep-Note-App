@@ -45,3 +45,6 @@ mat-label {
   .mat-mdc-form-field + .mat-mdc-form-field {
     margin-left: 8px;
   }
+  .height{
+    margin-left: 7px;
+  }
