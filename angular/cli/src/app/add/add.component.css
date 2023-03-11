@@ -1,0 +1,12 @@
+.addNote{
+    width: auto;
+    height: auto;
+    border: 1px solid gray;
+}
+
+mat-form-field{
+    width: auto;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
