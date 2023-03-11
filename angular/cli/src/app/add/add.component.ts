@@ -9,6 +9,7 @@ import { NotesService } from '../services/notes.service';
 })
 export class AddComponent {
   panelOpenState = false;
+  categories: string[] = ['Review', 'Office'];
   newNote: Note|any = {
     // id: null,
     title: "",
@@ -20,8 +21,9 @@ export class AddComponent {
   constructor (private _snackBar: MatSnackBar, private myservices:NotesService){
   }
   addNote(){
+    alert(this.newNote.category)
     if(this.newNote.priority!=="" && this.newNote.title!==""&& this.newNote.reminderDate!==""&&this.newNote.category!==""){
-      this.myservices.addNotes(this.newNote).subscribe(data=>alert("The Note was added"), error=>alert("The data was not added"))
+      this.myservices.addNotes(this.newNote).subscribe(data=>console.log("The Note was added"), error=>console.log("The data was not added"))
       this.openSnackBar('Feedback Submitted SuccessFully', 'Success')
     } else{
       this.openSnackBar('Failed to add Note', "Ok")

@@ -29,11 +29,11 @@ New Note
         <mat-form-field appearance="fill">
             <mat-label>Category</mat-label>
             <mat-select name="category" [(ngModel)]="newNote.category" required>
-              <mat-option value="Review">Review</mat-option>
-              <mat-option value="Office">Office</mat-option>
+              <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
             </mat-select>
             <mat-error *ngIf="!newNote.category">Category is required</mat-error>
           </mat-form-field>
+          
           
 
         <mat-radio-group name="priority" [(ngModel)]="newNote.priority" required>
