@@ -23,6 +23,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import {MatChipsModule} from '@angular/material/chips';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatRadioModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatChipsModule
 
   ],
   providers: [],
