@@ -15,4 +15,6 @@ export class NotesService {
   addNotes(dataIn:Note){
     return this.http.post<Note>('http://localhost:3000/notes', dataIn);
   }
+
+  
 }

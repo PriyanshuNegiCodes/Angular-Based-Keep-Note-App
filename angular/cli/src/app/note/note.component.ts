@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 
@@ -7,32 +8,40 @@ import { NotesService } from '../services/notes.service';
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
 })
-export class NoteComponent {
-
-  searchdata:any
-  NoteData: Note|any;
-  searchNote="";
+export class NoteComponent implements OnChanges {
+  @Input() inputSearchFromHeader: any;
   
-  searchButtonText="Search";
-  constructor(private myservice:NotesService){}
+  searchdata: any;
+  NoteData: Note | any;
+  searchNote = '';
+  
+  searchButtonText = 'Search';
 
-  search(){
-    if(this.searchNote===""){
-      this.ngOnInit();
-    }else{
-      this.sorted(this.searchNote)
+  constructor(private myservice: NotesService) {}
+
+  search() {
+    if (this.searchNote === '') {
+      this.ngOnChanges({});
+    } else {
+      this.sorted(this.searchNote);
     }
   }
-  ngOnInit(){
-    this.myservice.getNotes().subscribe(data => this.NoteData = data);
-  }
 
-  sorted(text:any){
-    this.myservice.getNotes().subscribe(data => this.NoteData = data.filter(sort=>sort.title===text));
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
+      let searchValue = changes['inputSearchFromHeader'].currentValue;
+      this.sorted(searchValue);
+    } else {
+      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+    }
   }
   
- 
 
+  sorted(text: any) {
+    this.myservice
+      .getNotes()
+      .subscribe(data => (this.NoteData = data.filter(sort => sort.title === text)));
+  }
 
   dateChange(input: any) {
     let date = new Date(input);
@@ -42,7 +51,7 @@ export class NoteComponent {
       day: '2-digit',
       hour: 'numeric',
       minute: 'numeric',
-      hour12: true
+      hour12: true,
     };
     return date.toLocaleString('en-US', options);
   }

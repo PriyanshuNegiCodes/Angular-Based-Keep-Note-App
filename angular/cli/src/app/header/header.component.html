@@ -6,6 +6,12 @@
       <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
       <mat-icon>settings</mat-icon>
       <mat-icon>dashboard</mat-icon>
+      <div id ="search">
+        <mat-form-field id="searchInput" appearance="outline">
+            <input matInput type="text" placeholder="Search  Note" [(ngModel)]="searchNote">
+            <mat-icon mat-button matSuffix  type="button" (click)="search()">search</mat-icon>
+        </mat-form-field>
+      </div>
     </mat-toolbar>
   </p>
   

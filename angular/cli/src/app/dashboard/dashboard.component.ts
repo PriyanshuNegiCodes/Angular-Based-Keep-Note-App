@@ -1,15 +1,17 @@
 
-import { Component, EventEmitter, Output } from '@angular/core';
-
+import { Component, Input} from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  @Input()
+  searchFromHeader:any
+  
   showAddNote = false;
-
-  addNote() {
+  
+  addNote(){
     this.showAddNote = true;
   }
 }
