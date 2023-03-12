@@ -19,14 +19,6 @@ export class NoteComponent implements OnChanges {
 
   constructor(private myservice: NotesService) {}
 
-  search() {
-    if (this.searchNote === '') {
-      this.ngOnChanges({});
-    } else {
-      this.sorted(this.searchNote);
-    }
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
       let searchValue = changes['inputSearchFromHeader'].currentValue;
@@ -40,7 +32,7 @@ export class NoteComponent implements OnChanges {
   sorted(text: any) {
     this.myservice
       .getNotes()
-      .subscribe(data => (this.NoteData = data.filter(sort => sort.title === text)));
+      .subscribe(data => (this.NoteData = data.filter(sort => sort.title===text)));
   }
 
   dateChange(input: any) {
