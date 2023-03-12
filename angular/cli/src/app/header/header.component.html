@@ -1,18 +1,15 @@
-<p>
-    <mat-toolbar color="primary">
-      <img src="https://store-images.s-microsoft.com/image/apps.64641.13825011251621706.e8a531ea-e643-41b9-8969-8a0182f70030.d943169b-2e61-4261-897a-cbf29d890cc7?w=120" alt="">
-      <span>Keep Note</span>
-      <span class="example-spacer"></span>
-      <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-      <mat-icon>settings</mat-icon>
-      <mat-icon>dashboard</mat-icon>
-      <div id ="search">
-        <mat-form-field id="searchInput" appearance="outline">
-          <input matInput type="text" placeholder="Search  Note" [(ngModel)]="searchNote" (ngModelChange)="search()">
-          <mat-icon mat-button matSuffix type="button" (click)="search()">search</mat-icon>
-        </mat-form-field>
-      </div>
-      
-    </mat-toolbar>
-  </p>
+<mat-toolbar color="primary">
+  <img src="https://store-images.s-microsoft.com/image/apps.64641.13825011251621706.e8a531ea-e643-41b9-8969-8a0182f70030.d943169b-2e61-4261-897a-cbf29d890cc7?w=120" alt="">
+  <span>Keep Note</span>
+  <span class="example-spacer"></span>
+  <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+  <mat-icon>settings</mat-icon>
+  <mat-icon>dashboard</mat-icon>
+  <div id ="search">
+    <mat-form-field id="searchInput" appearance="outline">
+      <input matInput type="text" placeholder="Search  Note" [(ngModel)]="searchNote" (ngModelChange)="search()">
+      <mat-icon mat-button matSuffix type="button" (click)="search()">search</mat-icon>
+    </mat-form-field>
+  </div>
   
+</mat-toolbar>

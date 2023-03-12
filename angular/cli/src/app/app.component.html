@@ -1,2 +1,7 @@
-<app-header (sendFromHeader)="rcvdFromHeader($event)"></app-header>
-<app-dashboard [searchFromHeader]="fromHeaderSearch"></app-dashboard>
+<div class="header-container">
+    <app-header (sendFromHeader)="rcvdFromHeader($event)"></app-header>
+  </div>
+  <div class="dashboard-container">
+    <app-dashboard [searchFromHeader]="fromHeaderSearch"></app-dashboard>
+  </div>
+  
