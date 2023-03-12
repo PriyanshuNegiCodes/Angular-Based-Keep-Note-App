@@ -4,8 +4,17 @@
    display: flex;
    justify-content: center;
 }
+app-add {
+  max-width: 500px;
+  max-height: 300px;
+  overflow: auto;
+}
 
 .example-button-container{
    display: flex;
    justify-content: end;
+   position: fixed;
+   top: 500px; /* adjust as necessary */
+   right: 40px
 }
+

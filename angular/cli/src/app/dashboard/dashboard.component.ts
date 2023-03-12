@@ -14,4 +14,8 @@ export class DashboardComponent {
   addNote(){
     this.showAddNote = true;
   }
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
+
