@@ -1,7 +1,7 @@
 <mat-card class="cardSize">
     <mat-card-content>
 
-        <form [formGroup]="register">
+        <form [formGroup]="register" #formData="ngForm">
             <div class="row1">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>First Name</mat-label>
@@ -32,7 +32,7 @@
                   Email is <strong>required</strong>
                 </mat-error>
               </mat-form-field>
-              
+           
              <!-- Password -->
               <div class="row1">
                   <mat-form-field class="example-full-width" appearance="outline">
@@ -41,6 +41,7 @@
                       <mat-error class="error"  *ngIf="register.controls['Password'].hasError('required')">
                           Password is Required              
                       </mat-error> 
+                      <mat-error class="error" *ngIf="getPassword?.errors?.['pattern']">Password should have min 8 letter password with at least a symbol, upper and lower case letters and a number</mat-error>
                   </mat-form-field>
   
                   <mat-form-field class="example-full-width" appearance="outline">
@@ -129,7 +130,10 @@
                 </mat-error>
 
             </mat-form-field> 
+            <br>
+            <button mat-raised-button type="button" (click)="ResetForm()" color="accent">Reset</button>
 
+            <button type="button" [disabled]="formData.invalid"  (click)="openSnackBar('Congrats!! You have submitted the form', 'Success')" mat-raised-button color="primary">Submit</button>
         </form>
 
     </mat-card-content>

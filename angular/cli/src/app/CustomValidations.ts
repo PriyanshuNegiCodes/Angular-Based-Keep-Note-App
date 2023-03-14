@@ -32,7 +32,7 @@ export class CustomValidator{
     }
     static zipCheck(zipCk: FormControl) {
         let zipVal: any = zipCk.value;
-        alert(zipVal)
+       
         if (zipVal === '5' || zipVal.length==5) {
           return null;
         } else {
