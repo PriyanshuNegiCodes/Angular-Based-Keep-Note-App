@@ -1,0 +1,64 @@
+<mat-card class="cardSize">
+    <mat-card-content>
+
+        <form [formGroup]="register">
+            <div class="row1">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Favorite food</mat-label>
+                    <input matInput placeholder="First Name Here" formControlName="FirstName">
+                    <mat-error class="error"  *ngIf="getFirstName?.errors?.['required']">
+                        First Name is Required                
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Favorite food</mat-label>
+                    <input matInput placeholder="Last Name Here"  formControlName="LastName">
+                    <mat-error class="error"  *ngIf="getLastName?.errors?.['required']">
+                        LastName Name is Required                
+                    </mat-error>   
+                </mat-form-field>
+            </div>
+
+            <!-- Email from materials website directly -->
+            <form class="example-form">
+                <mat-form-field class="emailBox"  appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                         placeholder="Ex. pat@example.com">
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                
+               <!-- Password -->
+                <div class="row1">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="Password">
+                        <mat-error class="error"  *ngIf="getPassword?.errors?.['required']">
+                        Password is Required                
+                        </mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="CPassword">
+                        <mat-error class="error"  *ngIf="getCPassword?.errors?.['required']">
+                        Confirm Password is Required                
+                        </mat-error>
+                        
+                        <mat-error *ngIf="register?.errors?.['PasswordCheck']">
+                            Password and Confirm Password Should Match
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+
+        </form>
+
+    </mat-card-content>
+</mat-card>

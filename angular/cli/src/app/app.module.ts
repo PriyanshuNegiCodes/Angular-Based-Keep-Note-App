@@ -9,7 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './search/search.component';
 import { AddComponent } from './add/add.component';
 import { NoteComponent } from './note/note.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {MatInputModule} from '@angular/material/input';
@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
+import { RegistrationComponent } from './registration/registration.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {MatSelectModule} from '@angular/material/select';
     SearchComponent,
     AddComponent,
     NoteComponent,
+    RegistrationComponent,
     
   ],
   imports: [
@@ -54,7 +57,8 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     MatButtonModule,
     MatChipsModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

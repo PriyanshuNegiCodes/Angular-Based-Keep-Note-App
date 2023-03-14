@@ -1,4 +1,6 @@
-<div [ngClass]="{'addNote': showAddNote}">
+<app-registration></app-registration>
+
+<div [ngClass]="{'addNote': showAddNote}">  
   <app-add *ngIf="showAddNote"></app-add>
 </div>
 <app-note [inputSearchFromHeader]="searchFromHeader"></app-note>
