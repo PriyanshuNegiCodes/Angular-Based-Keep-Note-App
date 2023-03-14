@@ -1,18 +1,20 @@
 
-import { AbstractControl, FormControl } from "@angular/forms";
-import { zip } from "rxjs";
+import { AbstractControl, FormControl, FormGroup, ValidationErrors } from "@angular/forms";
 
 export class CustomValidator{
     
-    static PasswordCheck(pwd:AbstractControl){
-        if(pwd.get('Password')?.value !== pwd.get('CPassword')?.value){
-            
+    static passwordMatchValidator(pwd:AbstractControl){
+
+        if(pwd.get('CPassword')?.value !==pwd.get('Password')?.value){
             return {PasswordError:true};
+            
         }else{
-           
+         
             return null;
         }
     }
+     
+
     static ageCheck(age:FormControl){
         if(age.value>18){
             return null;
@@ -28,12 +30,13 @@ export class CustomValidator{
             return {contactError:true}
         }
     }
-    // static zipCheck(zipCk: FormControl) {
-    //     let zipVal: any = zipCk.value;
-    //     if (zipVal === '5') {
-    //       return null;
-    //     } else {
-    //       return { zipError: true };
-    //     }
-    //   }     
+    static zipCheck(zipCk: FormControl) {
+        let zipVal: any = zipCk.value;
+        alert(zipVal)
+        if (zipVal === '5' || zipVal.length==5) {
+          return null;
+        } else {
+          return { zipError: true };
+        }
+      }     
 }

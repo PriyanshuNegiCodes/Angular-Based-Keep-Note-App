@@ -40,17 +40,17 @@
                       <input matInput type="password" placeholder="Password" formControlName="Password">
                       <mat-error class="error"  *ngIf="register.controls['Password'].hasError('required')">
                           Password is Required              
-                      </mat-error>   
+                      </mat-error> 
                   </mat-form-field>
   
                   <mat-form-field class="example-full-width" appearance="outline">
                       <mat-label>Confirm Password</mat-label>
-                      <input matInput placeholder="Password" formControlName="CPassword">
+                      <input matInput type="password" placeholder="Confirm Password" formControlName="CPassword">
                       <mat-error class="error"  *ngIf="getCPassword?.errors?.['required']">
                       Confirm Password is Required                
                       </mat-error>
                       <mat-error *ngIf="register?.errors?.['PasswordError']">
-                          Password and Confirm Password Should Match
+                        Password and Confirm Password Should Match
                       </mat-error>
 
                   </mat-form-field>
@@ -120,14 +120,14 @@
             <!-- zip -->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Write Zip</mat-label>
-                <input matInput type="number"  placeholder="Zip Code Here" formControlName="zipCode">
+                <input matInput placeholder="Zip Code Here" formControlName="zipCode">
                 <mat-error class="error"  *ngIf="getZip?.errors?.['required']">
                     Zip code is Required                
                 </mat-error>
+                <mat-error class="error"  *ngIf="getZip?.errors?.['zipError']">
 
-                <mat-error *ngIf="register.get('zipCode')?.hasError('required')">Zip code is required</mat-error>
-                <mat-error *ngIf="register.get('zipCode')?.hasError('minlength') || register.get('zipCode')?.hasError('maxlength')">Zip code must be 5 digits</mat-error>
-                
+                </mat-error>
+
             </mat-form-field> 
 
         </form>

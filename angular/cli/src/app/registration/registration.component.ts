@@ -28,8 +28,8 @@ export class RegistrationComponent {
     street: ['', [Validators.required]],
     city: ['',[Validators.required]], 
     state: ['',[Validators.required]], 
-    zipCode: ['',[Validators.required,  Validators.minLength(5), Validators.maxLength(5)]]
-  }, {validators:[CustomValidator.PasswordCheck]})
+    zipCode: ['',[Validators.required], [CustomValidator.zipCheck]]
+  }, {validators:[CustomValidator.passwordMatchValidator]})
   get getFirstName(){
     return this.register.get('FirstName');
   }
