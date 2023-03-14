@@ -28,13 +28,12 @@ export class CustomValidator{
             return {contactError:true}
         }
     }
-    static zipCheck(zipCk:FormControl){
-        let zipVal:any=zipCk.value;
-        if((zipVal===5 || zipVal.length==5)&& typeof(zipVal)==='number'){
-            return null;
-        }
-        else{
-            return {zipError:true}
-        }
-    }
+    // static zipCheck(zipCk: FormControl) {
+    //     let zipVal: any = zipCk.value;
+    //     if (zipVal === '5') {
+    //       return null;
+    //     } else {
+    //       return { zipError: true };
+    //     }
+    //   }     
 }

@@ -28,7 +28,7 @@ export class RegistrationComponent {
     street: ['', [Validators.required]],
     city: ['',[Validators.required]], 
     state: ['',[Validators.required]], 
-    zip: ['',[Validators.required], CustomValidator.zipCheck]
+    zipCode: ['',[Validators.required,  Validators.minLength(5), Validators.maxLength(5)]]
   }, {validators:[CustomValidator.PasswordCheck]})
   get getFirstName(){
     return this.register.get('FirstName');
@@ -64,7 +64,7 @@ export class RegistrationComponent {
     return this.register.get('state');
   }
   get getZip(){
-    return this.register.get('zip');
+    return this.register.get('zipCode');
   }
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

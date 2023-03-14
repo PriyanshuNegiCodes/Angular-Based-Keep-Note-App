@@ -97,7 +97,7 @@
 
             <!-- City and  State -->
             <div>
-                <mat-form-field class="example-full-width" appearance="outline">
+                <mat-form-field class="cityName" appearance="outline">
                     <mat-label>Write City Name</mat-label>
                     <input matInput  placeholder="City Name Here" formControlName="city">
                     <mat-error class="error"  *ngIf="getContact?.errors?.['required']">
@@ -120,14 +120,14 @@
             <!-- zip -->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Write Zip</mat-label>
-                <input matInput  placeholder="Contact Here" formControlName="zip">
+                <input matInput type="number"  placeholder="Zip Code Here" formControlName="zipCode">
                 <mat-error class="error"  *ngIf="getZip?.errors?.['required']">
                     Zip code is Required                
                 </mat-error>
-                <mat-error class="error"  *ngIf="getCity?.errors?.['zipError']">
-                    City name must start with 768
-                </mat-error>
 
+                <mat-error *ngIf="register.get('zipCode')?.hasError('required')">Zip code is required</mat-error>
+                <mat-error *ngIf="register.get('zipCode')?.hasError('minlength') || register.get('zipCode')?.hasError('maxlength')">Zip code must be 5 digits</mat-error>
+                
             </mat-form-field> 
 
         </form>
