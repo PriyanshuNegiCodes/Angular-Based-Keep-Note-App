@@ -72,7 +72,17 @@
                   <mat-error class="error"  *ngIf="getAge?.errors?.['AgeCheck']">
                       Age must be higher than 18
                   </mat-error>
-              </mat-form-field>                        
+              </mat-form-field>  
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Write Your contact Here</mat-label>
+                <input matInput  placeholder="Contact Here" formControlName="contact">
+                <mat-error class="error"  *ngIf="getAge?.errors?.['required']">
+                    contact is Required                
+                </mat-error>
+                <mat-error class="error"  *ngIf="getAge?.errors?.['AgeCheck']">
+                    contact must start with 768
+                </mat-error>
+            </mat-form-field>                        
 
               <!-- Address -->
 

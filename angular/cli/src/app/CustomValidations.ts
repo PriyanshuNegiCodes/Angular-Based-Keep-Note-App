@@ -4,12 +4,12 @@ import { AbstractControl, FormControl } from "@angular/forms";
 export class CustomValidator{
     
     static PasswordCheck(pwd:AbstractControl){
-        if(pwd.get('Password')?.value === pwd.get('CPassword')?.value){
+        if(pwd.get('Password')?.value !== pwd.get('CPassword')?.value){
             
-            return null;
+            return {PasswordError:true};
         }else{
            
-            return {PasswordError:true}
+            return null;
         }
     }
     static ageCheck(age:FormControl){
@@ -17,6 +17,14 @@ export class CustomValidator{
             return null;
         }else{
             return {AgeCheck:true}
+        }
+    }
+    static contactCheck(age:FormControl){
+        let contact:any=age.value;
+        if(contact.length==10 && (contact.startsWith(7)||contact.startsWith(8)||contact.startsWith(9))){
+            return null;
+        }else{
+            return {contactError:true}
         }
     }
 }

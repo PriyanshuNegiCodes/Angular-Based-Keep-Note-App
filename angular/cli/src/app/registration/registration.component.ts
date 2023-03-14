@@ -23,7 +23,8 @@ export class RegistrationComponent {
     LastName:['', [Validators.required]] ,
     Password: ['', [Validators.required]],
     CPassword: ['', [Validators.required]],
-    Age :['', [Validators.required, CustomValidator.ageCheck]]
+    Age :['', [Validators.required, CustomValidator.ageCheck]],
+    contact: ['', [Validators.required, CustomValidator.contactCheck]]
   }, {validators:[CustomValidator.PasswordCheck]})
   get getFirstName(){
     return this.register.get('FirstName');
@@ -33,9 +34,9 @@ export class RegistrationComponent {
     return this.register.get('FirstName');
   }
 
-  // get getPassword(){
-  //   return this.register.get('Password');
-  // }
+  get getPassword(){
+    return this.register.get('Password');
+  }
   get getCPassword(){
     return this.register.get('CPassword');
   }
