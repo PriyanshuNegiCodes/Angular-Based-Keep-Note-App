@@ -4,7 +4,7 @@
         <form [formGroup]="register">
             <div class="row1">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>First Name</mat-label>
                     <input matInput placeholder="First Name Here" formControlName="FirstName">
                     <mat-error class="error"  *ngIf="getFirstName?.errors?.['required']">
                         First Name is Required                
@@ -12,7 +12,7 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>Last Name</mat-label>
                     <input matInput placeholder="Last Name Here"  formControlName="LastName">
                     <mat-error class="error"  *ngIf="getLastName?.errors?.['required']">
                         LastName Name is Required                
@@ -39,23 +39,43 @@
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput type="password" placeholder="Password" formControlName="Password">
-                        <mat-error class="error"  *ngIf="getPassword?.errors?.['required']">
-                        Password is Required                
-                        </mat-error>
+                        <mat-error class="error"  *ngIf="register.controls['Password'].hasError('required')">
+                            Password is Required              
+                        </mat-error>   
                     </mat-form-field>
     
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Confirm Password</mat-label>
-                        <input matInput type="password" placeholder="Password" formControlName="CPassword">
+                        <input matInput placeholder="Password" formControlName="CPassword">
                         <mat-error class="error"  *ngIf="getCPassword?.errors?.['required']">
                         Confirm Password is Required                
                         </mat-error>
-                        
-                        <mat-error *ngIf="register?.errors?.['PasswordCheck']">
+                        <mat-error *ngIf="register?.errors?.['PasswordError']">
                             Password and Confirm Password Should Match
                         </mat-error>
+
                     </mat-form-field>
                 </div>
+                <div>
+                    <mat-radio-group aria-label="Select an option" >
+                        <mat-label style="font-size: 16px; font-weight: 500;">Gender</mat-label>
+                        <mat-radio-button value="1">Male</mat-radio-button>
+                        <mat-radio-button value="2">Female</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <!-- Age and phone number -->
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Write Your Age Here</mat-label>
+                    <input matInput placeholder="Age Here" formControlName="Age">
+                    <mat-error class="error"  *ngIf="getAge?.errors?.['required']">
+                        Age is Required                
+                    </mat-error>
+                    <mat-error class="error"  *ngIf="getAge?.errors?.['AgeCheck']">
+                        Age must be higher than 18
+                    </mat-error>
+                </mat-form-field>                        
+
+                <!-- Address -->
             </form>
 
         </form>

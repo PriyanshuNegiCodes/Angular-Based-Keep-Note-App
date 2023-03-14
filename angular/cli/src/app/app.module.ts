@@ -11,7 +11,7 @@ import { AddComponent } from './add/add.component';
 import { NoteComponent } from './note/note.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
@@ -58,7 +58,8 @@ import { RegistrationComponent } from './registration/registration.component';
     MatButtonModule,
     MatChipsModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule
 
   ],
   providers: [],
