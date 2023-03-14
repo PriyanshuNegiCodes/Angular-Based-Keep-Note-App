@@ -63,7 +63,7 @@
                     </mat-radio-group>
               </div>
               <!-- Age and phone number -->
-              <mat-form-field class="example-full-width" appearance="outline">
+              <mat-form-field class="agedata" appearance="outline">
                   <mat-label>Write Your Age Here</mat-label>
                   <input matInput placeholder="Age Here" formControlName="Age">
                   <mat-error class="error"  *ngIf="getAge?.errors?.['required']">
@@ -76,15 +76,59 @@
               <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Write Your contact Here</mat-label>
                 <input matInput  placeholder="Contact Here" formControlName="contact">
-                <mat-error class="error"  *ngIf="getAge?.errors?.['required']">
+                <mat-error class="error"  *ngIf="getContact?.errors?.['required']">
                     contact is Required                
                 </mat-error>
-                <mat-error class="error"  *ngIf="getAge?.errors?.['AgeCheck']">
+                <mat-error class="error"  *ngIf="getContact?.errors?.['contactError']">
                     contact must start with 768
                 </mat-error>
             </mat-form-field>                        
 
+            <br>
               <!-- Address -->
+              <!-- Street -->
+              <mat-form-field class="street" appearance="outline">
+                <mat-label>Write Street Name</mat-label>
+                <input matInput  placeholder="Street Name Here" formControlName="street">
+                <mat-error class="error"  *ngIf="getStreet?.errors?.['required']">
+                    Street Name is Required                
+                </mat-error>
+               </mat-form-field> 
+
+            <!-- City and  State -->
+            <div>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Write City Name</mat-label>
+                    <input matInput  placeholder="City Name Here" formControlName="city">
+                    <mat-error class="error"  *ngIf="getContact?.errors?.['required']">
+                        City name is Required                
+                    </mat-error>
+                    <mat-error class="error"  *ngIf="getCity?.errors?.['contactError']">
+                        City name must start with 768
+                    </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Write State Name</mat-label>
+                    <input matInput  placeholder="State Name Here" formControlName="state">
+                    <mat-error class="error"  *ngIf="getState?.errors?.['required']">
+                        State name is Required                
+                    </mat-error>
+
+                </mat-form-field> 
+            </div>
+            <!-- zip -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Write Zip</mat-label>
+                <input matInput  placeholder="Contact Here" formControlName="zip">
+                <mat-error class="error"  *ngIf="getZip?.errors?.['required']">
+                    Zip code is Required                
+                </mat-error>
+                <mat-error class="error"  *ngIf="getCity?.errors?.['zipError']">
+                    City name must start with 768
+                </mat-error>
+
+            </mat-form-field> 
 
         </form>
 

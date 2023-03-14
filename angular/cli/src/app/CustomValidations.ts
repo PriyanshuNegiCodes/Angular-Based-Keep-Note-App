@@ -1,5 +1,6 @@
 
 import { AbstractControl, FormControl } from "@angular/forms";
+import { zip } from "rxjs";
 
 export class CustomValidator{
     
@@ -25,6 +26,15 @@ export class CustomValidator{
             return null;
         }else{
             return {contactError:true}
+        }
+    }
+    static zipCheck(zipCk:FormControl){
+        let zipVal:any=zipCk.value;
+        if((zipVal===5 || zipVal.length==5)&& typeof(zipVal)==='number'){
+            return null;
+        }
+        else{
+            return {zipError:true}
         }
     }
 }

@@ -24,7 +24,11 @@ export class RegistrationComponent {
     Password: ['', [Validators.required]],
     CPassword: ['', [Validators.required]],
     Age :['', [Validators.required, CustomValidator.ageCheck]],
-    contact: ['', [Validators.required, CustomValidator.contactCheck]]
+    contact: ['', [Validators.required, CustomValidator.contactCheck]],
+    street: ['', [Validators.required]],
+    city: ['',[Validators.required]], 
+    state: ['',[Validators.required]], 
+    zip: ['',[Validators.required], CustomValidator.zipCheck]
   }, {validators:[CustomValidator.PasswordCheck]})
   get getFirstName(){
     return this.register.get('FirstName');
@@ -43,6 +47,24 @@ export class RegistrationComponent {
   
   get getAge(){
     return this.register.get('Age')
+  }
+
+  get getContact(){
+    return this.register.get('contact')
+  }
+
+  get getStreet(){
+    return this.register.get('street');
+  }
+  get getCity(){
+    return this.register.get('city');
+  }
+
+  get getState(){
+    return this.register.get('state');
+  }
+  get getZip(){
+    return this.register.get('zip');
   }
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

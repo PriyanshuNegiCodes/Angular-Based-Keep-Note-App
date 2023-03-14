@@ -17,8 +17,15 @@ margin-right: auto;
   .emailBox {
     width: 100%;
   }
+  .street{
+    width: 100%;
+  }
 
 
   .mat-mdc-radio-button ~ .mat-mdc-radio-button {
     margin-left: 16px;
+  }
+
+  .agedata{
+    margin-right: 10px;
   }
