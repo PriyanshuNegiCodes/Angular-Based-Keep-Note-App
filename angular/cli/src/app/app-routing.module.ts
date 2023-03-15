@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'dashboard', component:DashboardComponent},
   {path: 'add', component:AddComponent},
   {path: 'Registration', component:RegistrationComponent},
-  {path: 'editnote', component:EditnoteComponent}
+  {path: 'editnote', component:EditnoteComponent},
+  {path: 'editnote/:id', component:EditnoteComponent}
 
 ];
 

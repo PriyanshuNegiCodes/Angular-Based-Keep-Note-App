@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
@@ -8,7 +8,7 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./editnote.component.css']
 })
 export class EditnoteComponent {
-
+  NoteData:Note|any
   categories: string[] = ['Review', 'Office'];
   newNote: Note|any = {
     id: null,
@@ -23,22 +23,16 @@ export class EditnoteComponent {
 
   editNote(){
     this.myservices.updateNote(this.newNote).subscribe(data=>console.log("The Note was added"), error=>console.log("The data was not added"))
+    this.openSnackBar('Note Was Successfully Deleted', 'Ok')  
   }
-
-
-  // addNote(){
-  //   alert(this.newNote.category)
-  //   if(this.newNote.priority!=="" && this.newNote.title!==""&& this.newNote.reminderDate!==""&&this.newNote.category!==""){
-    // this.myservices.addNotes(this.newNote).subscribe(data=>console.log("The Note was added"), error=>console.log("The data was not added"))
-  //     this.openSnackBar('Feedback Submitted SuccessFully', 'Success')
-  //   } else{
-  //     this.openSnackBar('Failed to add Note', "Ok")
-  //   }
-  // }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
     this.newNote={};
   }
 
+  ngOnInit(){
+    this.myservices.getNotes().subscribe(data => (this.NoteData = data));
+  }
+  
 }

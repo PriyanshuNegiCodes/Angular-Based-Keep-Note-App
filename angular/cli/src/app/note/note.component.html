@@ -8,7 +8,7 @@
 
 
 <div class="noteData">
-    <mat-card class="dataCard" *ngFor="let data of NoteData">
+    <mat-card class="dataCard" routerLink="{{data.id}}"  *ngFor="let data of NoteData">
         <mat-card-header>
           <mat-card-title>
             {{data.title}} 
