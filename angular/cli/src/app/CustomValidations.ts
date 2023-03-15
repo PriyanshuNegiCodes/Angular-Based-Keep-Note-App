@@ -3,17 +3,16 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors } from "@angu
 
 export class CustomValidator{
     
-    static passwordMatchValidator(pwd:AbstractControl){
-
-        if(pwd.get('CPassword')?.value !==pwd.get('Password')?.value){
-            return {PasswordError:true};
-            
-        }else{
-         
-            return null;
+    static passwordMatchValidator(group: FormGroup) {
+        const password = group.get('Password')?.value;
+        const confirmPassword = group.get('CPassword')?.value;
+      
+        if (password !== confirmPassword) {
+          return { PasswordError: true };
         }
-    }
-     
+        
+        return null;
+      }
 
     static ageCheck(age:FormControl){
         if(age.value>18){

@@ -1,3 +1,10 @@
+.data{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .addNote{
     width: auto;
     height: auto;

@@ -26,6 +26,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import { RegistrationComponent } from './registration/registration.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -37,6 +41,7 @@ import { RegistrationComponent } from './registration/registration.component';
     AddComponent,
     NoteComponent,
     RegistrationComponent,
+    NavigationBarComponent,
     
   ],
   imports: [
@@ -59,7 +64,10 @@ import { RegistrationComponent } from './registration/registration.component';
     MatChipsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule
 
   ],
   providers: [],

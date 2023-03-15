@@ -18,22 +18,20 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class RegistrationComponent {
 
   constructor( private fb:FormBuilder, private _snackBar: MatSnackBar){ }
-
-  register=this.fb.group({
-    FirstName: ['', [Validators.required]] ,
-    LastName:['', [Validators.required]] ,
-    // Password: ['', [Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@#$%^&*()!_-]{8,30}$')]],
+  register = this.fb.group({
+    FirstName: ['', [Validators.required]],
+    LastName: ['', [Validators.required]],
     Password: ['', [Validators.required]],
-
     CPassword: ['', [Validators.required]],
-    Age :['', [Validators.required, CustomValidator.ageCheck]],
+    Age: ['', [Validators.required, CustomValidator.ageCheck]],
     contact: ['', [Validators.required, CustomValidator.contactCheck]],
     street: ['', [Validators.required]],
-    city: ['',[Validators.required]], 
-    state: ['',[Validators.required]], 
-    zipCode: ['',[Validators.required, CustomValidator.zipCheck]]
-  })
-// }, {validators:[CustomValidator.passwordMatchValidator]})
+    city: ['', [Validators.required]],
+    state: ['', [Validators.required]],
+    zipCode: ['', [Validators.required, CustomValidator.zipCheck]]
+  }, {
+    validators: [CustomValidator.passwordMatchValidator]
+  });
   get getFirstName(){
     return this.register.get('FirstName');
   }
@@ -42,10 +40,11 @@ export class RegistrationComponent {
     return this.register.get('FirstName');
   }
 
-  get getPassword(){
+  get getPassword() {
     return this.register.get('Password');
   }
-  get getCPassword(){
+  
+  get getCPassword() {
     return this.register.get('CPassword');
   }
   

@@ -9,13 +9,13 @@ export class DashboardComponent {
   @Input()
   searchFromHeader:any
   
-  showAddNote = false;
+  // showAddNote = false;
   
-  addNote(){
-    this.showAddNote = true;
-  }
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  // addNote(){
+  //   this.showAddNote = true;
+  // }
+  // scrollToTop() {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // }
 }
 

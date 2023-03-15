@@ -95,6 +95,14 @@
       "title": "Random",
       "priority": "Medium",
       "id": 16
+    },
+    {
+      "title": "Priyanshu",
+      "content": "<app-registration></app-registration>\n\n<div [ngClass]=\"{'addNote': showAddNote}\">  \n  <app-add *ngIf=\"showAddNote\"></app-add>\n</div>\n<app-note [inputSearchFromHeader]=\"searchFromHeader\"></app-note>\n\n<div class=\"example-button-container\">\n  <button mat-mini-fab color=\"accent\" aria-label=\"Example icon button with a plus one icon\" (click)=\"addNote() \" (click)=\"scrollToTop()\">\n      <mat-icon>add</mat-icon>\n  </button>\n</div>\n",
+      "reminderDate": "2023-03-21T18:30:00.000Z",
+      "category": "Office",
+      "priority": "Low",
+      "id": 17
     }
   ]
 }
