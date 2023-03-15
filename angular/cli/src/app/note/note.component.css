@@ -6,6 +6,8 @@
 
 
 .noteData{
+  margin-left: 20px;
+  margin-top: 20px;
     display: flex; 
     flex-wrap: wrap;
 }
@@ -44,4 +46,9 @@ mat-card-title{
   button.mat-butt{
     border: none;
     outline: none;
+  }
+
+
+  .pencil{
+    margin-top: auto;
   }

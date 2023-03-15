@@ -46,8 +46,8 @@ New Note
             </div>
         </mat-radio-group>
 
-        <button type="submit" [disabled]="formdata.invalid">
-            <mat-icon  (click)="addNote()" >save</mat-icon>        
+        <button mat-raised-button type="submit" [disabled]="formdata.invalid" (click)="addNote()">
+           Save       
         </button>
 
     </form>
@@ -56,7 +56,3 @@ New Note
 
     
 </mat-accordion>
-
-
-
-           

@@ -30,6 +30,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { EditnoteComponent } from './editnote/editnote.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { MatListModule } from '@angular/material/list';
     NoteComponent,
     RegistrationComponent,
     NavigationBarComponent,
+    EditnoteComponent,
     
   ],
   imports: [

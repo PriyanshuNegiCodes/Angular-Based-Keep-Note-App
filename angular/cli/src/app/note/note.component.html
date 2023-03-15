@@ -2,6 +2,7 @@
   <mat-form-field id="searchInput">
       <input matInput type="text" placeholder="Search  Note" [(ngModel)]="searchNote">
       <mat-icon mat-button matSuffix  type="button" (click)="search()">search</mat-icon>
+      <mat-icon mat-button matSuffix  type="button">search</mat-icon>
   </mat-form-field>
 </div> -->
 
@@ -27,6 +28,7 @@
         <mat-card-actions>
           <mat-chip-option>{{data.category}}</mat-chip-option>
         </mat-card-actions>
+        <mat-icon class="pencil">edit</mat-icon>
     </mat-card>
 </div>
 
