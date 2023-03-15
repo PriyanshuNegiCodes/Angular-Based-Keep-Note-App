@@ -2,4 +2,68 @@
     display: flex;
     margin: auto;
     width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+/* .data{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  } */
+  
+  /* .addNote{
+      width: auto;
+      height: auto;
+  
+  } */
+  
+  mat-form-field{
+      width: 60%;
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  p{
+      font-size: 12px;
+      color: red;
+  }
+  mat-label {
+      font-size: 12px;
+    }
+  
+    div{
+      width: auto;
+      margin-left: 0px;
+      margin-right: 20px;
+    }
+    .prio{
+      /* margin-left: px; */
+      font-size: 20px;
+      font-weight:400;
+      
+    }
+  
+    button{
+      margin-top: 8px;
+      margin-left: 12px;
+      }
+  
+    .mat-mdc-form-field + .mat-mdc-form-field {
+      margin-left: 8px;
+    }
+    .height{
+      margin-left: 10px;
+    }
+  
+    mat-radio-group{
+      margin-left: 0px;
+    }
+    h3{
+      margin-left: 10px;
+    }
+  

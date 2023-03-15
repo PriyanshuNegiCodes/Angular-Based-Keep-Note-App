@@ -1,3 +1,48 @@
 <mat-card class="editCard">
-    <mat-card-content>Note Edit Panel</mat-card-content>
+    <mat-card-content>
+        <h3>Note Edit Panel</h3>
+        <form #formdata="ngForm">
+            <mat-form-field appearance="fill" class="height" >
+                <mat-label>Note Title</mat-label>
+                <input matInput required name="title" [(ngModel)]="newNote.title" #noteTitle="ngModel" required>
+                <p *ngIf="noteTitle.touched && noteTitle.pristine">Note title is required</p>
+            </mat-form-field>    
+            <mat-form-field>
+                <mat-label>Note Content</mat-label>
+                <textarea matInput name="noteContent" [(ngModel)]="newNote.content" required minlength="100" #noteContent="ngModel" required></textarea>
+                <p *ngIf="noteContent.touched && noteContent.pristine">Note content is required</p>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" name="datepicker" [(ngModel)]="newNote.reminderDate" required >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select name="category" [(ngModel)]="newNote.category" required>
+                  <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="!newNote.category">Category is required</mat-error>
+              </mat-form-field>
+              
+              
+    
+            <mat-radio-group name="priority" [(ngModel)]="newNote.priority" required>
+                <mat-label > <h3>Priority </h3> </mat-label>
+                <div>
+                <mat-radio-button value="Low">Low</mat-radio-button>
+                <mat-radio-button value="Medium">Medium</mat-radio-button>
+                <mat-radio-button value="High">High</mat-radio-button>
+                <mat-radio-button value="Critical">Critical</mat-radio-button>
+                </div>
+            </mat-radio-group>
+    
+            <button mat-raised-button type="submit" [disabled]="formdata.invalid" (click)="editNote()">
+               Save       
+            </button>    
+        </form>
+    </mat-card-content>
 </mat-card>

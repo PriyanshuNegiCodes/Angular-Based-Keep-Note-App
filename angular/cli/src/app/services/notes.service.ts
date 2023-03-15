@@ -15,6 +15,9 @@ export class NotesService {
   addNotes(dataIn:Note){
     return this.http.post<Note>('http://localhost:3000/notes', dataIn);
   }
-
+  updateNote(data:Note): Observable<Note> {
+ 
+     return this.http.put<Note>('http://localhost:3000/notes/${data.id}', data);
+  }
   
 }
