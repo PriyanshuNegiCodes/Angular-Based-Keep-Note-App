@@ -15,6 +15,5 @@ export class CanDeactivatedTeam implements CanDeactivate<EditnoteComponent> {
     nextState: RouterStateSnapshot
     ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
     return component.canExit();
-    }
-    
+    }   
 }

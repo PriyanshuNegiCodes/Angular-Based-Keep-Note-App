@@ -55,7 +55,6 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FormsModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
@@ -73,7 +72,8 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule
 
   ],
   providers: [],

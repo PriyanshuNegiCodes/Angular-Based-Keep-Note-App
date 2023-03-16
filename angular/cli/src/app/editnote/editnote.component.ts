@@ -55,14 +55,14 @@ export class EditnoteComponent {
     
       //For the Unsaved Guard
 
-      formdata=this.fb.group({
-        TITLE: [null, Validators.required],
-        CONTENT: [null, Validators.required],
+      allData=this.fb.group({
+        head: ['', Validators.required],
+        information: ['', Validators.required],
       })
 
       canExit() {
-        if (this.formdata.get('TITLE')?.dirty) {
-          if (this.formdata.get('CONTENT') ) {
+        if (this.allData.get('head')?.dirty) {
+          if (this.allData.get('information') ) {
             return confirm('wanna leave! with out saving it?');
           } else {
             return true;
