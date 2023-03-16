@@ -9,7 +9,7 @@
             </mat-form-field>    
             <mat-form-field>
                 <mat-label>Note Content</mat-label>
-                <textarea matInput name="noteContent" [(ngModel)]="newNote.content" required minlength="100" #noteContent="ngModel" required></textarea>
+                <textarea matInput name="noteContent" [(ngModel)]="newNote.content" required minlength="100" #noteContent="ngModel" required>{{newNote.content}}</textarea>
                 <p *ngIf="noteContent.touched && noteContent.pristine">Note content is required</p>
             </mat-form-field>
             <mat-form-field appearance="fill">

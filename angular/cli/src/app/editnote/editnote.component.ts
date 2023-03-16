@@ -35,24 +35,19 @@ export class EditnoteComponent {
   }
 
   ngOnInit(){
-    alert("hii")
     let id:any=0;
-
+  
     this.route.paramMap.subscribe(params => {
       id= params.get('id');
     });
 
-
-    this.myservices.getNotes().subscribe(data => (this.NoteData = data));
-    //this.newNote.id=this.NoteData.id;
-    if(this.NoteData==id){
-      this.newNote.title=this.NoteData.title;
-    this.newNote.content=this.NoteData.content;
-    this.newNote.reminderDate=this.NoteData.reminderDate;
-    this.newNote.priority=this.NoteData.priority;
-    }
-  }
-
-
-  
+    this.myservices.getNotesById(id).subscribe(data => {this.NoteData = data;
+        console.log(this.NoteData);
+        this.newNote.id=this.NoteData.id
+        this.newNote.title=this.NoteData.title
+        this.newNote.content=this.NoteData.content
+        this.newNote.reminderDate=this.NoteData.reminderDate
+        this.newNote.category=this.NoteData.category
+        this.newNote.category=this.NoteData.category
+      }, error => console.log(error)); }  
 }
