@@ -7,10 +7,11 @@ import { EditnoteComponent } from './editnote/editnote.component';
 import { LoginComponent } from './login/login.component';
 import { NoteComponent } from './note/note.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { CanActivateGuard } from './services/can-activate.guard';
 
 const routes: Routes = [
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
-  {path:'dashboard', component:DashboardComponent},
+  {path:'dashboard', component:DashboardComponent, canActivate:[CanActivateGuard]},
   {path: 'add', component:AddComponent},
   {path: 'Registration', component:RegistrationComponent},
   {path: 'editnote', component:EditnoteComponent},

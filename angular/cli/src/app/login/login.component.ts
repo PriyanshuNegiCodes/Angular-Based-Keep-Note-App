@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-
+import { AuthenticationnService } from '../authenticationn.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  constructor(private auth: AuthenticationnService){
+    
+  }
+
   message:string="";
 
   username : string ="";
@@ -14,13 +19,16 @@ export class LoginComponent {
   hide:boolean=false;
 
   submit(){
+  this.auth.loggedIn();  
   console.log("user name is " + this.username)
   this.message="login-success";
-  this.clear();
+  this.hide=false;
+  this.show=true;
+
   }
 
   LogOut(){
-    // this.service.loggedOut();
+    this.auth.loggedOut();
     this.show=false;
     this.hide=true
     this.message="Logout Success"
@@ -30,5 +38,6 @@ export class LoginComponent {
   this.username ="";
   this.password = "";
   this.show = true;
+  this.clear();
 }
 }
