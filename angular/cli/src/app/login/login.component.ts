@@ -28,10 +28,12 @@ export class LoginComponent {
   }
 
   LogOut(){
-    this.auth.loggedOut();
-    this.show=false;
-    this.hide=true
-    this.message="Logout Success"
+    if(this.username=="Negi"&&this.password=="1234"){
+      this.auth.loggedOut();
+      this.show=false;
+      this.hide=true
+      this.message="Logout Success"
+    }
   }
 
   clear(){
