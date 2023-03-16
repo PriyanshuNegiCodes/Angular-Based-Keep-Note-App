@@ -27,4 +27,9 @@ export class NotesService {
      return this.http.put<Note>(url, data);
   }
   
+  deleteNoteById(id: number){
+    const url = `http://localhost:3000/notes/${id}`;
+    return this.http.delete<void>(url);
+
+  }  
 }

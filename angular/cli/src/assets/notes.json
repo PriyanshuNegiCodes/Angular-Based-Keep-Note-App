@@ -57,12 +57,12 @@
       "id": 7
     },
     {
-      "title": "Sprint 2 Qns",
-      "content": "All the required modules to work with Angular forms and material components should be imported in the application root module.​\nValidations must be implemented for the form controls.​\nNewly added note should be available after successful form submission in the note list as seen in the expected output image.​\nFollowing mat-icons should be used for displaying the priority levels while adding the note in a card.",
-      "reminderDate": "2023-03-10T18:30:00.000Z",
-      "category": "Office",
-      "priority": "High",
-      "id": 9
+      "id": 9,
+      "title": "Edit Demo",
+      "content": "Just Chill Just Chill Just Chill Just Chill Just Chill Just Chill Just Chill v Just Chill Just Chill Just Chill Just Chill",
+      "reminderDate": "2023-03-29T18:30:00.000Z",
+      "category": "Review",
+      "priority": "Critical"
     },
     {
       "title": "Short Story",
@@ -87,14 +87,6 @@
       "category": "Review",
       "priority": "Low",
       "id": 12
-    },
-    {
-      "category": "Office",
-      "reminderDate": "2023-03-21T18:30:00.000Z",
-      "content": "Develop a user registration form to add a new user. The data model for user should include properties like firstName, lastName, password, confirmPassword, gender, age, email, phone and address. Address property should contain details like street, city, state and zipCode.\nThe reactive form created should resemble the following images.",
-      "title": "Random",
-      "priority": "Medium",
-      "id": 16
     },
     {
       "id": 17,
