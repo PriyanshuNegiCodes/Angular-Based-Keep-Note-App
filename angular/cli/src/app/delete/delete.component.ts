@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotesService } from '../services/notes.service';
 @Component({
   selector: 'app-delete',
@@ -8,7 +8,7 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent {
-  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar, private myservices:NotesService){
+  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar, private myservices:NotesService, private goBack: Router){
   }
 
   ngOnInit(){
@@ -18,13 +18,14 @@ export class DeleteComponent {
       id= params.get('id');
     });
 
-    this.myservices.deleteNoteById(id).subscribe(data=>alert(data), error=>alert("this is the error"))
+    this.myservices.deleteNoteById(id).subscribe()
+    this.openSnackBar('The Item Was Deleted', 'Ok')
+ 
   }
 
-  // openSnackBar(message: string, action: string) {
-  //   this._snackBar.open(message, action);
-  //   this.newNote={};
-  //   this.NoteData={};
-  // }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+    this.goBack.navigate(['/dashboard']);
+  }
 
 }

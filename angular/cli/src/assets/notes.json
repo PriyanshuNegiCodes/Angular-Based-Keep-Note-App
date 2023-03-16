@@ -95,14 +95,6 @@
       "reminderDate": "2023-03-21T18:30:00.000Z",
       "category": "Office",
       "priority": "Medium"
-    },
-    {
-      "title": "Task 4 - Define Routes",
-      "content": "route that navigates to notes view\ndefault route that redirects to notes view when application is launched\nwild card route to handle page not found error\nroute with note-id as parameter to load edit-note component\n\nthis component should read note-id parameter and display note details i",
-      "reminderDate": "2023-03-22T18:30:00.000Z",
-      "category": "Office",
-      "priority": "Critical",
-      "id": 18
     }
   ]
 }
