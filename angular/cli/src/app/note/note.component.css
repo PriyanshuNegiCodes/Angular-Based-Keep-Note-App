@@ -47,8 +47,17 @@ mat-card-title{
     border: none;
     outline: none;
   }
-
+.chips{
+  margin-top: auto;
+  margin-bottom: 0px;
+}
 
   .pencil{
     margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  .pencilIcon{
+    margin-left: 20px;
+    margin-right: 20px;
   }

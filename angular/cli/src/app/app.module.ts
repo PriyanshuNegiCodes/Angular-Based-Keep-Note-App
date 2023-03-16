@@ -31,6 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { EditnoteComponent } from './editnote/editnote.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { EditnoteComponent } from './editnote/editnote.component';
     RegistrationComponent,
     NavigationBarComponent,
     EditnoteComponent,
+    DeleteComponent,
     
   ],
   imports: [

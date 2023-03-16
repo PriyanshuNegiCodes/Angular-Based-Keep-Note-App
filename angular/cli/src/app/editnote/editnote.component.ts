@@ -23,8 +23,9 @@ export class EditnoteComponent {
   }
 
   editNote(){
+  //  alert(this.newNote[0].content)
     this.myservices.updateNote(this.newNote).subscribe(data=>console.log("The Note was added"), error=>console.log("The data was not added"))
-    this.openSnackBar('Note Was Successfully Deleted', 'Ok')  
+    this.openSnackBar('Note Was edit Successfully', 'Ok')  
     this.NoteData={}
   }
 

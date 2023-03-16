@@ -25,10 +25,13 @@
         <mat-card-content>
            <p>{{data.content}}</p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions class="chips">
           <mat-chip-option>{{data.category}}</mat-chip-option>
         </mat-card-actions>
-        <mat-icon type="button" [routerLink]="['/editnote', data.id]" class="pencil">edit</mat-icon>
+        <div class="pencil">
+        <mat-icon class="pencilIcon" type="button" [routerLink]="['/editnote', data.id]" >edit</mat-icon>
+        <mat-icon [routerLink]="['/delete', data.id]">delete_sweep</mat-icon>
+        </div>
       </mat-card>
 </div>
 
