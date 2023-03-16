@@ -21,35 +21,9 @@ import { NotesService } from '../services/notes.service';
 
   constructor(private myservice: NotesService,private route: ActivatedRoute) {}
 
- 
-
-  // ngOnChanges(changes: SimpleChanges) {
-
-  //     if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
-  //     let searchValue = changes['inputSearchFromHeader'].currentValue;
-  //     this.sorted(searchValue);
-  //   } else {
-  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
-  //   }
-  // }
-  
-
-  ngOnInit() {
-       this.route.paramMap.subscribe(params => {
-      this.inputSearchFromHeader = params.get('searchNote');
-    });
-    alert(this.inputSearchFromHeader)
-  
-    if (this.inputSearchFromHeader==="") {
-      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
-    } else {
-      this.myservice.getNotes().subscribe(data => {
-        this.NoteData = data.filter(note => note.title==this.inputSearchFromHeader);
-      });
-    }
-  }
-  
-
+ ngOnInit(){
+  this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+ }
   sorted(text: any) {
     this.myservice
       .getNotes()
@@ -68,4 +42,34 @@ import { NotesService } from '../services/notes.service';
     };
     return date.toLocaleString('en-US', options);
   }
+
+
+
+  /////Commented out for doing search)
+  // ngOnChanges(changes: SimpleChanges) {
+
+  //     if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
+  //     let searchValue = changes['inputSearchFromHeader'].currentValue;
+  //     this.sorted(searchValue);
+  //   } else {
+  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+  //   }
+  // }
+  
+
+  // ngOnInit() {
+  //      this.route.paramMap.subscribe(params => {
+  //     this.inputSearchFromHeader = params.get('searchNote');
+  //   });
+    
+  //   if (this.inputSearchFromHeader==="") {
+  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+  //   } else {
+  //     this.myservice.getNotes().subscribe(data => {
+  //       this.NoteData = data.filter(note => note.title==this.inputSearchFromHeader);
+  //     });
+  //   }
+  // }
+  
+  
 }
