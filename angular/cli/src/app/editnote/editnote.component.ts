@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Note } from 'src/assets/note';
@@ -19,7 +20,7 @@ export class EditnoteComponent {
     category: "",
     priority: ""
   };
-  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar, private myservices:NotesService){
+  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar, private myservices:NotesService, private fb: FormBuilder){
   }
 
   editNote(){
@@ -51,4 +52,24 @@ export class EditnoteComponent {
         this.newNote.category=this.NoteData.category
         this.newNote.category=this.NoteData.category
       }, error => console.log(error)); }  
+    
+      //For the Unsaved Guard
+
+      formdata=this.fb.group({
+        TITLE: [null, Validators.required],
+        CONTENT: [null, Validators.required],
+      })
+
+      canExit() {
+        if (this.formdata.get('TITLE')?.dirty) {
+          if (this.formdata.get('CONTENT') ) {
+            return confirm('wanna leave! with out saving it?');
+          } else {
+            return true;
+          }
+        }
+        else{
+          return true;
+        }
+      }
 }
