@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <form class="example-form">
+            <div class="loginPage">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input matInput placeholder="Enter your name" name="usename"
+                    [(ngModel)] ="username">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Enter your password" value="" name="password" type="password" [(ngModel)]= "password">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+                    <span *ngIf="show"> <button mat-button color="accent">{{message}}!!</button></span>
+                    <br>
+                    <div class="logoutButton">
+                        <button  mat-raised-button color="primary" (click)="LogOut()">LogOut</button>
+                         <span *ngIf="hide" > <button mat-button color="accent">{{message}} !!</button></span>
+
+                    </div>
+                </div>
+        </form>
+    </mat-card-content>
+  </mat-card>

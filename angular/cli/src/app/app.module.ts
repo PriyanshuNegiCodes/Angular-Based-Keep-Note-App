@@ -32,6 +32,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { EditnoteComponent } from './editnote/editnote.component';
 import { DeleteComponent } from './delete/delete.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { DeleteComponent } from './delete/delete.component';
     NavigationBarComponent,
     EditnoteComponent,
     DeleteComponent,
+    LoginComponent,
     
   ],
   imports: [
