@@ -43,23 +43,24 @@ import { NotesService } from '../services/notes.service';
     return date.toLocaleString('en-US', options);
   }
 
-  search(){
-    let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === this.searchNote);
+  search(text:any){
+    
+    let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === text);
     this.NoteData=filteredNotes;
   }
 
 
 
   /////Commented out for doing search)
-  // ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
 
-  //     if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
-  //     let searchValue = changes['inputSearchFromHeader'].currentValue;
-  //     this.sorted(searchValue);
-  //   } else {
-  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
-  //   }
-  // }
+      if (changes['searchNote'] && changes['searchNote'].currentValue) {
+      let searchValue = changes['searchNote'].currentValue;
+      this.search(searchValue);
+    } else {
+      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+    }
+  }
   
 
   // ngOnInit() {
