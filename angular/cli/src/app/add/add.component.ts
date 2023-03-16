@@ -18,7 +18,7 @@ export class AddComponent {
     category: "",
     priority: ""
   };
-  constructor (private _snackBar: MatSnackBar, private myservices:NotesService){
+  constructor ( private _snackBar: MatSnackBar, private myservices:NotesService){
   }
   addNote(){
     alert(this.newNote.category)
