@@ -43,6 +43,11 @@ import { NotesService } from '../services/notes.service';
     return date.toLocaleString('en-US', options);
   }
 
+  search(){
+    let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === this.searchNote);
+    this.NoteData=filteredNotes;
+  }
+
 
 
   /////Commented out for doing search)

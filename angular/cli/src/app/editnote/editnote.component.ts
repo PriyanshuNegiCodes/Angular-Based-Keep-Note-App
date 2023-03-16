@@ -36,6 +36,7 @@ export class EditnoteComponent {
     this._snackBar.open(message, action);
     this.newNote={};
     this.NoteData={};
+    this.goBack.navigate(['/dashboard']);
   }
 
   ngOnInit(){
@@ -54,7 +55,6 @@ export class EditnoteComponent {
         this.newNote.category=this.NoteData.category
         this.newNote.category=this.NoteData.category
       }, error => console.log(error)); 
-      this.goBack.navigate(['/dashboard']);
     }  
     
       //For the Unsaved Guard

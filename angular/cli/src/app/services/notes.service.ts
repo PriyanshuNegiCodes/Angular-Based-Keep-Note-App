@@ -22,8 +22,6 @@ export class NotesService {
   }
   updateNote(data:Note): Observable<Note> {
     let url="http://localhost:3000/notes/"+data.id
-    alert(url)
-    alert(data.content)
      return this.http.put<Note>(url, data);
   }
   
