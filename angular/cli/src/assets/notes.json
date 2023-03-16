@@ -1,14 +1,6 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "sample-note",
-      "content": "This is a sample note added for testing purpose",
-      "reminderDate": "2022-09-09T18:30:00.000Z",
-      "category": "Office",
-      "priority": "High"
-    },
-    {
       "id": 2,
       "title": "practice-exercise: typescript",
       "content": "solution development progress - exercise 1 solution ready, exercise 2 solution to be started",

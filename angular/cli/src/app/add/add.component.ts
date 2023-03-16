@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 @Component({
@@ -18,7 +19,7 @@ export class AddComponent {
     category: "",
     priority: ""
   };
-  constructor ( private _snackBar: MatSnackBar, private myservices:NotesService){
+  constructor ( private _snackBar: MatSnackBar, private myservices:NotesService, private goBack: Router){
   }
   addNote(){
     alert(this.newNote.category)
@@ -33,6 +34,8 @@ export class AddComponent {
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
     this.newNote={};
+    this.goBack.navigate(['/dashboard']);
+
   }
 
 }

@@ -9,7 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './search/search.component';
 import { AddComponent } from './add/add.component';
 import { NoteComponent } from './note/note.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -33,6 +34,7 @@ import { MatListModule } from '@angular/material/list';
 import { EditnoteComponent } from './editnote/editnote.component';
 import { DeleteComponent } from './delete/delete.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { LoginComponent } from './login/login.component';
     EditnoteComponent,
     DeleteComponent,
     LoginComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
@@ -55,6 +58,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    FormsModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
@@ -72,8 +76,7 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule,
-    FormsModule
+    MatListModule
 
   ],
   providers: [],

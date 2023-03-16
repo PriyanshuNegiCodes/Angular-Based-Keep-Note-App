@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 @Component({
@@ -20,8 +20,10 @@ export class EditnoteComponent {
     category: "",
     priority: ""
   };
-  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar, private myservices:NotesService, private fb: FormBuilder){
+  constructor (private route: ActivatedRoute,private _snackBar: MatSnackBar,
+     private myservices:NotesService, private fb: FormBuilder, private goBack: Router){
   }
+
 
   editNote(){
   //  alert(this.newNote[0].content)
@@ -51,7 +53,9 @@ export class EditnoteComponent {
         this.newNote.reminderDate=this.NoteData.reminderDate
         this.newNote.category=this.NoteData.category
         this.newNote.category=this.NoteData.category
-      }, error => console.log(error)); }  
+      }, error => console.log(error)); 
+      this.goBack.navigate(['/dashboard']);
+    }  
     
       //For the Unsaved Guard
 
@@ -69,7 +73,14 @@ export class EditnoteComponent {
           }
         }
         else{
+          this.newNote={};
           return true;
         }
+      }
+      get getHead(){
+        return this.allData.get('head')
+      }
+      get getInformatoin(){
+        return this.allData.get('information');
       }
 }

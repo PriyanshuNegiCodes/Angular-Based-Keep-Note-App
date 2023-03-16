@@ -1,16 +1,16 @@
-<mat-card class="editCard">
+<mat-card class="editCard" [formGroup]="allData">
     <mat-card-content>
         <h3>Note Edit Panel</h3>
         <form #formdata="ngForm" [formGroup]="allData">
             <mat-form-field appearance="fill" class="height" >
                 <mat-label>Note Title</mat-label>
-                <input matInput required name="title" [(ngModel)]="newNote.title" #noteTitle="ngModel" required formControlName="head">
-                <p *ngIf="noteTitle.touched && noteTitle.pristine">Note title is required</p>
+                <input matInput required name="title" [(ngModel)]="newNote.title"  required formControlName="head">
+                <mat-error class="errors" *ngIf="getHead?.errors?.['required']">Note title is required</mat-error>
             </mat-form-field>    
             <mat-form-field>
                 <mat-label>Note Content</mat-label>
-                <textarea matInput name="noteContent" [(ngModel)]="newNote.content" required minlength="100" #noteContent="ngModel" required formControlName="information">{{newNote.content}}</textarea>
-                <p *ngIf="noteContent.touched && noteContent.pristine">Note content is required</p>
+                <textarea matInput name="noteContent" [(ngModel)]="newNote.content" required minlength="100" required formControlName="information">{{newNote.content}}</textarea>
+                <mat-error class="errors" *ngIf="getInformatoin?.errors?.['required']">Note content is required</mat-error>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Choose a date</mat-label>
