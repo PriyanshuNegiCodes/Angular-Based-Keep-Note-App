@@ -13,7 +13,6 @@ export class DeleteComponent {
 
   ngOnInit(){
     let id:any=0;
-    alert("hii")
     this.route.paramMap.subscribe(params => {
       id= params.get('id');
     });

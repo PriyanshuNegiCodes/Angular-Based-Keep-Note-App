@@ -1,5 +1,6 @@
 
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Routes } from '@angular/router';
 import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 
@@ -8,8 +9,9 @@ import { NotesService } from '../services/notes.service';
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
 })
-export class NoteComponent implements OnChanges {
-  @Input() inputSearchFromHeader: any;
+// export class NoteComponent implements OnChanges {
+  export class NoteComponent {
+  inputSearchFromHeader: any;
   
   searchdata: any;
   NoteData: Note | any;
@@ -17,14 +19,33 @@ export class NoteComponent implements OnChanges {
   
   searchButtonText = 'Search';
 
-  constructor(private myservice: NotesService) {}
+  constructor(private myservice: NotesService,private route: ActivatedRoute) {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
-      let searchValue = changes['inputSearchFromHeader'].currentValue;
-      this.sorted(searchValue);
-    } else {
+ 
+
+  // ngOnChanges(changes: SimpleChanges) {
+
+  //     if (changes['inputSearchFromHeader'] && changes['inputSearchFromHeader'].currentValue) {
+  //     let searchValue = changes['inputSearchFromHeader'].currentValue;
+  //     this.sorted(searchValue);
+  //   } else {
+  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+  //   }
+  // }
+  
+
+  ngOnInit() {
+       this.route.paramMap.subscribe(params => {
+      this.inputSearchFromHeader = params.get('searchNote');
+    });
+    alert(this.inputSearchFromHeader)
+  
+    if (this.inputSearchFromHeader==="") {
       this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+    } else {
+      this.myservice.getNotes().subscribe(data => {
+        this.NoteData = data.filter(note => note.title==this.inputSearchFromHeader);
+      });
     }
   }
   
