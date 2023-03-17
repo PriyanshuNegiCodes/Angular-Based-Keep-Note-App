@@ -14,7 +14,7 @@ import { NotesService } from '../services/notes.service';
   inputSearchFromHeader: any;
   
   searchdata: any;
-  NoteData: Note | any;
+  NoteData: Note | any=[];
   searchNote = '';
   
   searchButtonText = 'Search';
@@ -43,24 +43,28 @@ import { NotesService } from '../services/notes.service';
     return date.toLocaleString('en-US', options);
   }
 
-  search(text:any){
-    
-    let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === text);
+  search(){
+
+    if(this.searchNote==""){
+      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+    }else{
+      let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === this.searchNote.toUpperCase());
     this.NoteData=filteredNotes;
-  }
+    }
+  } 
 
 
 
   /////Commented out for doing search)
-  ngOnChanges(changes: SimpleChanges) {
+  // ngOnChanges(changes: SimpleChanges) {
 
-      if (changes['searchNote'] && changes['searchNote'].currentValue) {
-      let searchValue = changes['searchNote'].currentValue;
-      this.search(searchValue);
-    } else {
-      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
-    }
-  }
+  //     if (changes['searchNote'] && changes['searchNote'].currentValue) {
+  //     let searchValue = changes['searchNote'].currentValue;
+  //     this.search(searchValue);
+  //   } else {
+  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+  //   }
+  // }
   
 
   // ngOnInit() {
@@ -76,6 +80,5 @@ import { NotesService } from '../services/notes.service';
   //     });
   //   }
   // }
-  
-  
+   
 }
