@@ -32,6 +32,12 @@ export class RegistrationComponent {
   }, {
     validators: [CustomValidator.passwordMatchValidator]
   });
+
+  // get passwordMatchValidator() {
+  //   return CustomValidator.passwordMatchValidator;
+  // }
+  
+
   get getFirstName(){
     return this.register.get('FirstName');
   }

@@ -9,14 +9,6 @@
       "priority": "Medium"
     },
     {
-      "id": 3,
-      "title": "challenge: typescript",
-      "content": "solution developed, need to submit for evaluation",
-      "reminderDate": "2022-09-09T18:30:00.000Z",
-      "category": "Office",
-      "priority": "Low"
-    },
-    {
       "id": 4,
       "title": "practice-exercise: typescript",
       "content": "solution reviewed, refactoring in progress",
@@ -47,30 +39,6 @@
       "category": "Office",
       "priority": "Medium",
       "id": 7
-    },
-    {
-      "id": 9,
-      "title": "Edit Demo",
-      "content": "Just Chill Just Chill Just Chill Just Chill Just Chill Just Chill Just Chill v Just Chill Just Chill Just Chill Just Chill",
-      "reminderDate": "2023-03-29T18:30:00.000Z",
-      "category": "Review",
-      "priority": "Critical"
-    },
-    {
-      "title": "India",
-      "content": "India is a South Asian country with a rich and diverse culture. It is the second-most populous country in the world and has a thriving economy. The country is also known for its history, cuisine, and religious diversity.",
-      "reminderDate": "2023-03-11T18:30:00.000Z",
-      "category": "Review",
-      "priority": "Critical",
-      "id": 11
-    },
-    {
-      "id": 17,
-      "title": "Edit Update",
-      "content": "Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes Edit Working ? Yes ",
-      "reminderDate": "2023-03-21T18:30:00.000Z",
-      "category": "Office",
-      "priority": "Medium"
     }
   ]
 }

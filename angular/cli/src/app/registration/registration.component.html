@@ -50,9 +50,12 @@
                       <mat-error class="error"  *ngIf="getCPassword?.errors?.['required']">
                       Confirm Password is Required                
                       </mat-error>
-                      <mat-error *ngIf="register?.errors?.['PasswordError']">
+                      <!-- <mat-error  *ngIf="register?.errors?.['PasswordError']">
                         Password and Confirm Password Should Match
-                      </mat-error>
+                      </mat-error> -->
+                      <p style="color: red;"  *ngIf="register?.errors?.['PasswordError']">
+                        Password and Confirm Password Should Match
+                      </p>
 
                   </mat-form-field>
               </div>

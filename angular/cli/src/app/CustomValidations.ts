@@ -7,12 +7,13 @@ export class CustomValidator{
         const password = group.get('Password')?.value;
         const confirmPassword = group.get('CPassword')?.value;
       
-        if (password !== confirmPassword) {
+        if (password === confirmPassword) {
+          return null;
+          
+        }else{
           return { PasswordError: true };
         }
-        
-        return null;
-      }
+     }
 
     static ageCheck(age:FormControl){
         if(age.value>18){
@@ -39,3 +40,4 @@ export class CustomValidator{
         }
       }     
 }
+
