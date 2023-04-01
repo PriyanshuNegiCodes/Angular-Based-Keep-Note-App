@@ -6,8 +6,8 @@
   <mat-icon>dashboard</mat-icon>  -->
   <div id ="search">
     <mat-form-field id="searchInput" appearance="outline">
-      <input  matInput type="text" placeholder="Search  Note"  >
-      <mat-icon mat-button matSuffix type="button" >search</mat-icon>
+      <input  matInput type="text" placeholder="Search  Note" [(ngModel)]="searchNote" >
+      <mat-icon [routerLink]="['/search', searchNote]"  mat-button matSuffix type="button" >search</mat-icon>
     </mat-form-field>
   </div>
   
