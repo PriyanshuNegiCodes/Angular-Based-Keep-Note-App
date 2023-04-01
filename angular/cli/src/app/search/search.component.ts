@@ -1,6 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Note } from 'src/assets/note';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class SearchComponent {
     inputSearchFromHeader: any;
     
     searchdata: any;
-    NoteData: Note | any=[];
+    NoteData: any;
     searchNote = '';
     
     searchButtonText = 'Search';
@@ -28,16 +27,16 @@ export class SearchComponent {
       });
     
       this.myservice.getNotesByName(searchNote).subscribe(data => (this.NoteData = data));
-      if(this.searchNote=""){
-        this.back();
-      }
+      // if(this.searchNote=""){
+      //   this.back();
+      // }
       
    }
  
-   back(){
-    alert("hii");
-    this.goBack.navigate(['/dashboard']);
-   }
+  //  back(){
+  //   alert("hii");
+  //   this.goBack.navigate(['/dashboard']);
+  //  }
   
     dateChange(input: any) {
       let date = new Date(input);

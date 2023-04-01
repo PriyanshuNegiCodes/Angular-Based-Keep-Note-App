@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'editnote/:id', component:EditnoteComponent, canDeactivate:[CanDeactivatedTeam]},
   {path: 'delete/:id', component:DeleteComponent},
   // {path: 'note/:searchNote', component: NoteComponent},
-  {path: 'login', component:LoginComponent},
   {path: 'search/:searchNote', component:SearchComponent},
+  {path: 'login', component:LoginComponent},
   {path: '**', component:PageNotFoundComponent}
 
 ];
