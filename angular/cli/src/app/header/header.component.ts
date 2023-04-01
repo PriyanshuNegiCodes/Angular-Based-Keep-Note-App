@@ -8,6 +8,6 @@ import { Component, Output , EventEmitter} from '@angular/core';
 })
 export class HeaderComponent {
 
-  searchNote="";
+ 
 
 }
