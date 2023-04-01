@@ -19,9 +19,5 @@ export class NavigationBarComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   
-  fromHeaderSearch:any
-
-  rcvdFromHeader(rcvdtext:any){
-    this.fromHeaderSearch=rcvdtext;
-  }
+ 
 }

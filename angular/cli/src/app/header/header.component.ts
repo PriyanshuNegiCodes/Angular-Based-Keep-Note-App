@@ -7,13 +7,7 @@ import { Component, Output , EventEmitter} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Output()
-  sendFromHeader=new EventEmitter()
 
   searchNote="";
 
-  search(){
-
-   this.sendFromHeader.emit(this.searchNote);
-  }
 }

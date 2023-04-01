@@ -16,6 +16,11 @@ export class NotesService {
     const url = `http://localhost:3000/notes/${id}`;
     return this.http.get<Note[]>(url);
   }
+
+  getNotesByName(searchNote: any): Observable<Note[]>{
+    const url = `http://localhost:3000/notes/?title=${searchNote}`;
+    return this.http.get<Note[]>(url);
+  }
   
   addNotes(dataIn:Note){
     return this.http.post<Note>('http://localhost:3000/notes', dataIn);

@@ -1,0 +1,28 @@
+<h1>hii</h1>
+<div class="noteData">
+    <mat-card class="dataCard" *ngFor="let data of NoteData">
+        <mat-card-header>
+          <mat-card-title>
+            {{data.title}} 
+            <div [ngSwitch]="data.priority">
+              <mat-icon *ngSwitchCase="'Critical'" color="warn">gpp_maybe</mat-icon>
+              <mat-icon *ngSwitchCase="'High'" color="warn">arrow_circle_up</mat-icon>
+              <mat-icon *ngSwitchCase="'Medium'" color="warn">remove_circle_outline</mat-icon>
+              <mat-icon *ngSwitchCase="'Low'" color="warn">arrow_circle_down</mat-icon>
+            </div>
+
+          </mat-card-title>
+          <mat-card-subtitle>{{dateChange(data.reminderDate)}} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+           <p>{{data.content}}</p>
+        </mat-card-content>
+        <mat-card-actions class="chips">
+          <mat-chip-option>{{data.category}}</mat-chip-option>
+        </mat-card-actions>
+        <div class="pencil">
+        <mat-icon class="pencilIcon" type="button" [routerLink]="['/editnote', data.id]" >edit</mat-icon>
+        <mat-icon [routerLink]="['/delete', data.id]">delete_sweep</mat-icon>
+        </div>
+      </mat-card>
+</div>

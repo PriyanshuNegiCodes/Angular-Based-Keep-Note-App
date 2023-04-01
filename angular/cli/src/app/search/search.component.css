@@ -1,0 +1,63 @@
+
+  /* mat-icon-button {
+  font-size: 24px;
+  cursor: pointer;
+} */
+
+
+.noteData{
+    margin-left: 20px;
+    margin-top: 20px;
+      display: flex; 
+      flex-wrap: wrap;
+  }
+  
+  .dataCard{
+      width: 18rem;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+  }
+  
+  mat-card-title{
+    display: flex;
+    justify-content: start;
+  }
+  
+  
+  @media screen and (max-width: 768px),  screen and (max-width: 1024px)   {
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  
+  
+    #search {
+   
+      display: flex;
+      justify-content: center;
+   
+    }
+    #searchInput{
+      width: 300px;
+    }
+    button.mat-butt{
+      border: none;
+      outline: none;
+    }
+  .chips{
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+  
+    .pencil{
+      margin-top: auto;
+      margin-bottom: 10px;
+    }
+  
+    .pencilIcon{
+      margin-left: 20px;
+      margin-right: 20px;
+    }

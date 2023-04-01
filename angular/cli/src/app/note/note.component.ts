@@ -43,15 +43,15 @@ import { NotesService } from '../services/notes.service';
     return date.toLocaleString('en-US', options);
   }
 
-  search(){
+  // search(){
 
-    if(this.searchNote==""){
-      this.myservice.getNotes().subscribe(data => (this.NoteData = data));
-    }else{
-      let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === this.searchNote.toUpperCase());
-    this.NoteData=filteredNotes;
-    }
-  } 
+  //   if(this.searchNote==""){
+  //     this.myservice.getNotes().subscribe(data => (this.NoteData = data));
+  //   }else{
+  //     let filteredNotes = this.NoteData.filter((note: { title: string; })  => note.title === this.searchNote.toUpperCase());
+  //   this.NoteData=filteredNotes;
+  //   }
+  // } 
 
 
 
