@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'delete/:id', component:DeleteComponent},
   // {path: 'note/:searchNote', component: NoteComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'search/:searchNote', component:SearchComponent, canDeactivate:[CanDeactivatedTeam]},
+  {path: 'search/:searchNote', component:SearchComponent},
   {path: '**', component:PageNotFoundComponent}
 
 ];

@@ -28,8 +28,16 @@ export class SearchComponent {
       });
     
       this.myservice.getNotesByName(searchNote).subscribe(data => (this.NoteData = data));
+      if(this.searchNote=""){
+        this.back();
+      }
+      
    }
  
+   back(){
+    alert("hii");
+    this.goBack.navigate(['/dashboard']);
+   }
   
     dateChange(input: any) {
       let date = new Date(input);
