@@ -18,6 +18,7 @@ export class NavigationBarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  searchNote="";
   
  
 }

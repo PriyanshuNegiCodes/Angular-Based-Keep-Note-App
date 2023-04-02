@@ -16,3 +16,22 @@
   z-index: 1;
 }
 
+
+
+/*  */
+  mat-icon {
+    margin-right: 10px;
+  }
+  mat-form-field{
+    margin-top: 20px;
+  }
+  mat-toolbar{
+    display: flex;
+  }
+  #search{
+    margin-left: 400px;
+    margin-right: 0px;
+  }
+  
+
+  

@@ -13,15 +13,16 @@ import { CanDeactivatedTeam } from './services/can-deactivated.service';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+  {path:'', redirectTo:'/login', pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent, canActivate:[CanActivateGuard]},
-  {path: 'add', component:AddComponent},
+
+  {path: 'add', component:AddComponent, canActivate:[CanActivateGuard]},
   {path: 'Registration', component:RegistrationComponent},
   {path: 'editnote/:id', component:EditnoteComponent, canDeactivate:[CanDeactivatedTeam]},
   {path: 'delete/:id', component:DeleteComponent},
-  // {path: 'note/:searchNote', component: NoteComponent},
-  {path: 'search/:searchNote', component:SearchComponent},
   {path: 'login', component:LoginComponent},
+  {path: 'search/:searchNote', component:SearchComponent, canActivate:[CanActivateGuard]},
+
   {path: '**', component:PageNotFoundComponent}
 
 ];

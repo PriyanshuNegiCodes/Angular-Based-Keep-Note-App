@@ -8,14 +8,10 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-
-    inputSearchFromHeader: any;
     
-    searchdata: any;
-    NoteData: any;
+    listData: any;
     searchNote = '';
     
-    searchButtonText = 'Search';
   
     constructor(private myservice: NotesService,private route: ActivatedRoute, private goBack:Router) {}
   
@@ -25,12 +21,13 @@ export class SearchComponent {
       this.route.paramMap.subscribe(params => {
         searchNote= params.get('searchNote');
       });
-    
-      this.myservice.getNotesByName(searchNote).subscribe(data => (this.NoteData = data));
+
+      this.myservice.getNotesByName(searchNote).subscribe(data => (this.listData = data));
       // if(this.searchNote=""){
       //   this.back();
       // }
-      
+  
+   
    }
  
   //  back(){
