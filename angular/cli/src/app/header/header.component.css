@@ -1,20 +1,24 @@
-/* 
-.example-spacer {
-    flex: 1 1 auto;
-  } */
-  mat-icon {
-    margin-right: 10px;
-  }
-  mat-form-field{
-    margin-top: 20px;
-  }
+mat-icon {
+  margin-right: 10px;
+}
+mat-form-field{
+  margin-top: 20px;
+}
+mat-toolbar{
+  display: flex;
+}
+#search{
+  margin-left: 400px;
+  margin-right: 0px;
+}
+
+@media only screen and (max-width: 767px) {
   mat-toolbar{
     display: flex;
+    justify-content: flex-start;
   }
-  #search{
-    margin-left: 400px;
-    margin-right: 0px;
+  #search {
+    margin-left: 0;
+    margin-right: auto;
   }
-  
-
-  
+}
